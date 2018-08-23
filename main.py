@@ -5,14 +5,14 @@ import requests
 from flask import Flask
 from flask import request
 from flask import jsonify
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 # from flask_sslify import SSLify
 
-TOKEN = os.getenv('TOKEN')
+TOKEN = os.environ.get('TOKEN')
 URL = 'https://api.telegram.org/bot{}/'.format(TOKEN)
 headers = {'user-agent': 'my-app/0.0.1'}
-load_dotenv()
+# load_dotenv()
 
 app = Flask(__name__)
 app.config['DEBUG'] = False
