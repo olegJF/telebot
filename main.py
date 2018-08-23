@@ -7,7 +7,7 @@ from flask import request
 from flask import jsonify
 from dotenv import load_dotenv
 
-from flask_sslify import SSLify
+# from flask_sslify import SSLify
 
 TOKEN = os.getenv('TOKEN')
 URL = 'https://api.telegram.org/bot{}/'.format(TOKEN)
@@ -15,7 +15,7 @@ headers = {'user-agent': 'my-app/0.0.1'}
 load_dotenv()
 
 app = Flask(__name__)
-sslify = SSLify(app)
+# sslify = SSLify(app)
 
 # https://api.telegram.org/botTOKEN/setWebhook?url=https://b9f92555.ngrok.io
 # https://api.telegram.org/botTOKEN/deleteWebhook
