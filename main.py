@@ -15,6 +15,7 @@ headers = {'user-agent': 'my-app/0.0.1'}
 load_dotenv()
 
 app = Flask(__name__)
+app.config['DEBUG'] = False
 # sslify = SSLify(app)
 
 # https://api.telegram.org/botTOKEN/setWebhook?url=https://b9f92555.ngrok.io
