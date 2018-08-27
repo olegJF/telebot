@@ -61,7 +61,7 @@ def parse_text(text):
 
 def get_api_response(addr):
     session = requests.Session()
-    url='https://glacial-retreat-97921.herokuapp.com/api' + addr
+    url='https://jobfinderapp.herokuapp.com/api' + addr
     r = session.get(url, headers=headers).json()
     # print(r)
     return r
