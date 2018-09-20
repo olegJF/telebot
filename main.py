@@ -8,12 +8,12 @@ from flask import jsonify
 # from dotenv import load_dotenv
 
 # from flask_sslify import SSLify
+# load_dotenv()
 
 TOKEN = os.environ.get('TOKEN')
 URL = 'https://api.telegram.org/bot{}/'.format(TOKEN)
 headers = {'user-agent': 'my-app/0.0.1'}
-# load_dotenv()
-
+API_URL = 'https://jobfinderapp.herokuapp.com/api/{}'.format(TOKEN )
 app = Flask(__name__)
 app.config['DEBUG'] = False
 # sslify = SSLify(app)
@@ -61,7 +61,7 @@ def parse_text(text):
 
 def get_api_response(addr):
     session = requests.Session()
-    url='https://jobfinderapp.herokuapp.com/api' + addr
+    url= API_URL + addr
     r = session.get(url, headers=headers).json()
     # print(r)
     return r
