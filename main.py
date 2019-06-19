@@ -13,7 +13,7 @@ from flask import jsonify
 TOKEN = os.environ.get('TOKEN')
 URL = 'https://api.telegram.org/bot{}/'.format(TOKEN)
 headers = {'user-agent': 'my-app/0.0.1'}
-API_URL = 'https://jobfinderapp.herokuapp.com/api/{}'.format(TOKEN )
+API_URL = os.environ.get('API_URL')
 app = Flask(__name__)
 app.config['DEBUG'] = False
 # sslify = SSLify(app)
