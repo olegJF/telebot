@@ -42,7 +42,7 @@ def parse_text(text):
         addresses = {'cities': '/cities', 'sp': '/specialties'}
         if '/start' in text or '/help' in text:
             message = '''
-            Для того, чтобы узнать, какие города доступны, отправьте в сообщении `/cities`. 
+            Для того, чтобы узнать, какие города доступны, отправьте в сообщении `/city`. 
             Чтобы узнать о доступных специальностях - отправьте `/sp` 
             Чтобы сделать запрос на сохраненные вакансии, отправьте в сообщении через пробел - @город @специальность. 
             Например так - `@kyiv @python` 
@@ -79,7 +79,7 @@ def index():
         if tmp:
             # print('TMP!')
             if len(tmp) == 2:
-                address = '/vacancies/?city={}&specialty={}'.format(*tmp)
+                address = '/vacancies/?city={}&sp={}'.format(*tmp)
                 print(address)
                 resp = get_api_response(address)
                 if resp:
